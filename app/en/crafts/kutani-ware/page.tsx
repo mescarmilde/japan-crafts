@@ -1,3 +1,4 @@
+import KutaniProcess from "./KutaniProcess";
 import KutaniRegionMap from "./KutaniRegionMap";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -389,6 +390,8 @@ export default function KutaniWarePage() {
               Kutani Ware&apos;s visual identity emerges.
             </p>
           </div>
+
+          <KutaniProcess />
 
           <div className="mt-10 space-y-8">
             <div className="grid gap-4 sm:grid-cols-[80px_1fr]">
