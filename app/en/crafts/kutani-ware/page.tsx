@@ -19,6 +19,85 @@ const sections = [
   { id: "faq", label: "FAQ" },
 ];
 
+const kutaniPhotos = {
+  "shoza": {
+    "src": "/images/kutani/shoza-style.jpg",
+    "width": 3291,
+    "height": 3195,
+    "alt": "Kutani dish with figures, flowers, colorful panels, and detailed gold decoration.",
+    "caption": "Shoza-style Kutani ware, one of Kutani's many visual traditions.",
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Shoza_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09847.jpg"
+  },
+  "iidaya": {
+    "src": "/images/kutani/iidaya-style.jpg",
+    "width": 3517,
+    "height": 3462,
+    "alt": "Kutani dish with finely drawn red figures and geometric patterns accented with gold.",
+    "caption": "Iidaya (Aka-e) style: fine red painting with gold accents.",
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Iidaya_(Aka-e)_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09851.jpg"
+  },
+  "mokubei": {
+    "src": "/images/kutani/mokubei-style.jpg",
+    "width": 3272,
+    "height": 3185,
+    "alt": "Kutani dish with a crowd of figures in green, yellow, purple, and blue against a red ground.",
+    "caption": "Mokubei style: an example of multicolored figure painting.",
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Mokubei_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09859.jpg"
+  },
+  "early": {
+    "src": "/images/kutani/kutani-17th-century.jpg",
+    "width": 4320,
+    "height": 3240,
+    "alt": "Seventeenth-century Kutani plate with sweeping green leaves, a purple flower, and a yellow ground.",
+    "caption": "Plate catalogued as Kutani ware, late 17th century. Art Institute of Chicago.",
+    "source": "https://commons.wikimedia.org/wiki/File:Kutani-Ware_Plate,_late_17th_century,_Japan,_porcelain_with_enamel_-_Art_Institute_of_Chicago_-_DSC00224.JPG"
+  },
+  "yoshidaya": {
+    "src": "/images/kutani/yoshidaya-style.jpg",
+    "width": 3203,
+    "height": 3150,
+    "alt": "Kutani dish with a green, yellow, purple, and blue landscape and patterned border.",
+    "caption": "Yoshidaya style: dense color without red.",
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Yoshidaya_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09855.jpg"
+  }
+} as const;
+
+
+function KutaniPhoto({
+  photo,
+  layout = "card",
+}: {
+  photo: keyof typeof kutaniPhotos;
+  layout?: "card" | "wide";
+}) {
+  const item = kutaniPhotos[photo];
+
+  return (
+    <figure className={layout === "wide" ? "mx-auto mt-8 max-w-xl" : "mt-4"}>
+      <Image
+        src={item.src}
+        alt={item.alt}
+        width={item.width}
+        height={item.height}
+        sizes={layout === "wide" ? "(max-width: 623px) calc(100vw - 48px), 576px" : "(max-width: 767px) calc(100vw - 98px), 350px"}
+        className="h-auto w-full"
+      />
+      <figcaption className="mt-2 text-xs leading-5 text-stone-500">
+        {item.caption} Photo: Daderot /{" "}
+        <a
+          href={item.source}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4"
+        >
+          Wikimedia Commons
+        </a>{" "}
+        · CC0
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function KutaniWarePage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-20">
@@ -35,6 +114,7 @@ export default function KutaniWarePage() {
           Discover the history, geography, techniques, and people behind one
           of Japan&apos;s most distinctive porcelain traditions.
         </p>
+        <KutaniPhoto photo="shoza" layout="wide" />
       </header>
 
       <nav className="mt-12 border-y border-stone-200 py-6">
@@ -71,6 +151,7 @@ export default function KutaniWarePage() {
 
         <section id="history">
           <h2 className="text-3xl font-semibold">History</h2>
+          <KutaniPhoto photo="early" layout="wide" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="border-l-2 border-stone-300 pl-4">
               <p className="text-sm text-stone-500">c. 1655</p>
@@ -244,6 +325,8 @@ export default function KutaniWarePage() {
                 Color as Painting
               </h3>
 
+              <KutaniPhoto photo="mokubei" />
+
               <p className="mt-4 leading-7 text-stone-600">
                 Gosai-de uses the five traditional Kutani colors to create pictorial
                 compositions. Landscapes, people, animals, and other subjects can turn
@@ -259,6 +342,8 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 Fine Red Lines and Gold
               </h3>
+
+              <KutaniPhoto photo="iidaya" />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Akae is known for extremely detailed decoration drawn primarily in
@@ -419,6 +504,8 @@ export default function KutaniWarePage() {
                 Bold, Painterly, and Free
               </h3>
 
+              <KutaniPhoto photo="early" />
+
               <p className="mt-4 leading-7 text-stone-600">
                 Ko-Kutani is associated with the earliest period of Kutani Ware.
                 It is known for powerful compositions, expressive brushwork, and rich
@@ -435,6 +522,8 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 Chinese-Inspired Figures
               </h3>
+
+              <KutaniPhoto photo="mokubei" />
 
               <p className="mt-4 leading-7 text-stone-600">
                 The Mokubei style developed under the influence of Kyoto potter
@@ -453,6 +542,8 @@ export default function KutaniWarePage() {
                 Dense Color Without Red
               </h3>
 
+              <KutaniPhoto photo="yoshidaya" />
+
               <p className="mt-4 leading-7 text-stone-600">
                 Yoshidaya revived the Aote tradition of Old Kutani. Green, yellow,
                 purple, and deep blue are used without red, often covering almost the
@@ -469,6 +560,8 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 Extremely Fine Red Painting
               </h3>
+
+              <KutaniPhoto photo="iidaya" />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Iidaya is famous for Akae Saibyo, extremely detailed painting in red.
@@ -501,6 +594,8 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 A Fusion Built for a New Era
               </h3>
+
+              <KutaniPhoto photo="shoza" />
 
               <p className="mt-4 leading-7 text-stone-600">
                 The style associated with Kutani Shoza (九谷庄三) combined techniques
