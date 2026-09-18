@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -203,6 +204,29 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 Bold and Saturated
               </h3>
+
+              <figure className="mt-4">
+                <Image
+                  src="/images/kutani/yoshidaya-style.jpg"
+                  alt="Kutani porcelain dish densely decorated in green, yellow, purple, and deep blue."
+                  width={3203}
+                  height={3150}
+                  sizes="(max-width: 767px) calc(100vw - 98px), (max-width: 895px) calc((100vw - 88px) / 3 - 50px), 220px"
+                  className="h-auto w-full"
+                />
+                <figcaption className="mt-2 text-xs leading-5 text-stone-500">
+                  Yoshidaya style · Photo: Daderot /{" "}
+                  <a
+                    href="https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Yoshidaya_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09855.jpg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4"
+                  >
+                    Wikimedia Commons
+                  </a>{" "}
+                  · CC0
+                </figcaption>
+              </figure>
 
               <p className="mt-4 leading-7 text-stone-600">
                 Aote emphasizes green and other strong colors, often covering almost
