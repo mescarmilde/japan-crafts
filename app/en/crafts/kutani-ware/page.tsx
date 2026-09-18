@@ -1,3 +1,4 @@
+import KutaniRegionMap from "./KutaniRegionMap";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -245,6 +246,7 @@ export default function KutaniWarePage() {
               people, and markets.
             </p>
           </div>
+          <KutaniRegionMap />
         </section>
 
         
