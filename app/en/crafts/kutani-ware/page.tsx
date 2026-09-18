@@ -100,6 +100,18 @@ function KutaniPhoto({
   );
 }
 
+function VisitLinks({ name, website, mapQuery, note }: { name: string; website: string; mapQuery: string; note: string }) {
+  return (
+    <div className="mt-6 border-t border-stone-200 pt-5">
+      <p className="text-sm leading-6 text-stone-600">{note}</p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <a href={website} target="_blank" rel="noopener noreferrer" aria-label={name + ": official website (opens in a new tab)"} className="inline-flex min-h-11 items-center border border-[#355c49] bg-[#355c49] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#284637] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Official website <span aria-hidden="true" className="ml-2">↗</span></a>
+        <a href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapQuery)} target="_blank" rel="noopener noreferrer" aria-label={name + ": view on Google Maps (opens in a new tab)"} className="inline-flex min-h-11 items-center border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">View on Google Maps <span aria-hidden="true" className="ml-2">↗</span></a>
+      </div>
+    </div>
+  );
+}
+
 export default function KutaniWarePage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-20">
@@ -665,6 +677,12 @@ export default function KutaniWarePage() {
                 Gosai decoration, and detailed red-and-gold works, making it especially
                 useful after learning the styles introduced earlier in this article.
               </p>
+              <VisitLinks
+                name="Kutaniyaki Art Museum (石川県九谷焼美術館)"
+                website="https://www.city.kaga.ishikawa.jp/kutani-mus/"
+                mapQuery="石川県九谷焼美術館 加賀市"
+                note="Check current exhibitions, opening days, admission, and access before your visit."
+              />
             </div>
 
             <div className="border border-stone-200 bg-white p-6">
@@ -687,6 +705,12 @@ export default function KutaniWarePage() {
                 Rather than seeing only finished ceramics, visitors can encounter
                 the physical infrastructure behind their production.
               </p>
+              <VisitLinks
+                name="Kutani Pottery Kiln Exhibition Hall"
+                website="https://kutani-kamaato.com/"
+                mapQuery="九谷焼窯跡展示館 加賀市 山代温泉"
+                note="Check opening days and visitor information for the historic kiln site in Yamashiro Onsen."
+              />
             </div>
 
             <div className="border border-stone-200 bg-white p-6">
@@ -713,6 +737,12 @@ export default function KutaniWarePage() {
                 If the “How It Is Made” section of this article interests you most,
                 this may be the most revealing place to visit.
               </p>
+              <VisitLinks
+                name="CERABO KUTANI"
+                website="https://cerabo-kutani.com/"
+                mapQuery="CERABO KUTANI 小松市 若杉町"
+                note="For a hands-on visit, check workshop availability, booking requirements, and collection or delivery arrangements."
+              />
             </div>
 
             <div className="border border-stone-200 bg-white p-6">
@@ -741,6 +771,12 @@ export default function KutaniWarePage() {
                 historical works to making, meeting, and buying Kutani Ware in the
                 same area.
               </p>
+              <VisitLinks
+                name="Kutani Pottery Village"
+                website="https://kutani-danchi.org/"
+                mapQuery="九谷陶芸村 能美市 泉台町"
+                note="Plan around the museums, shops, and workshops you want to visit; their opening days and booking arrangements may differ."
+              />
             </div>
           </div>
 
