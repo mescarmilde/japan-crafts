@@ -19,6 +19,7 @@ const sections = [
   { id: "today", label: "Kutani Ware Today" },
   { id: "buying", label: "Buying Guide" },
   { id: "faq", label: "FAQ" },
+  { id: "sources", label: "Sources & Further Reading" },
 ];
 
 const kutaniPhotos = {
@@ -68,9 +69,11 @@ const kutaniPhotos = {
 function KutaniPhoto({
   photo,
   layout = "card",
+  preload = false,
 }: {
   photo: keyof typeof kutaniPhotos;
   layout?: "card" | "wide";
+  preload?: boolean;
 }) {
   const item = kutaniPhotos[photo];
 
@@ -78,6 +81,7 @@ function KutaniPhoto({
     <figure className={layout === "wide" ? "mx-auto mt-8 max-w-xl" : "mt-4"}>
       <Image
         src={item.src}
+        preload={preload}
         alt={item.alt}
         width={item.width}
         height={item.height}
@@ -114,13 +118,13 @@ function VisitLinks({ name, website, mapQuery, note }: { name: string; website: 
 
 export default function KutaniWarePage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-20">
+    <main className="mx-auto max-w-4xl px-6 py-12 sm:py-20">
       <header>
         <p className="text-sm uppercase tracking-[0.25em] text-stone-500">
           Ishikawa · Ceramics
         </p>
 
-        <h1 className="mt-4 text-5xl font-semibold">
+        <h1 className="mt-4 text-4xl font-semibold sm:text-5xl">
           Kutani Ware (九谷焼)
         </h1>
 
@@ -128,10 +132,10 @@ export default function KutaniWarePage() {
           Discover the history, geography, techniques, and people behind one
           of Japan&apos;s most distinctive porcelain traditions.
         </p>
-        <KutaniPhoto photo="shoza" layout="wide" />
+        <KutaniPhoto photo="shoza" layout="wide" preload />
       </header>
 
-      <nav className="mt-12 border-y border-stone-200 py-6">
+      <nav id="contents" aria-label="Article contents" className="mt-12 scroll-mt-6 border-y border-stone-200 py-6">
         <p className="mb-4 text-sm font-semibold uppercase tracking-wider">
           Contents
         </p>
@@ -141,7 +145,7 @@ export default function KutaniWarePage() {
             <li key={section.id}>
               <a
                 href={`#${section.id}`}
-                className="text-stone-600 hover:text-stone-900"
+                className="inline-flex min-h-11 items-center text-stone-600 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]"
               >
                 {section.label}
               </a>
@@ -161,6 +165,9 @@ export default function KutaniWarePage() {
             Ware has developed through different kilns, artists, and periods over more
             than three centuries.
           </p>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="history">
@@ -219,6 +226,9 @@ export default function KutaniWarePage() {
               product.
             </p>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="why-here">
@@ -260,6 +270,9 @@ export default function KutaniWarePage() {
             </p>
           </div>
           <KutaniRegionMap />
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         
@@ -381,6 +394,9 @@ export default function KutaniWarePage() {
               and how fine the artist&apos;s brushwork is.
             </p>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="production">
@@ -492,6 +508,9 @@ export default function KutaniWarePage() {
               and other specialists can all contribute to the finished object.
             </p>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="styles">
@@ -635,6 +654,9 @@ export default function KutaniWarePage() {
               materials, tastes, and markets.
             </p>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="visit">
@@ -811,6 +833,9 @@ export default function KutaniWarePage() {
             requirements can change. Check each facility&apos;s official information
             before visiting.
           </p>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="today">
@@ -923,6 +948,9 @@ export default function KutaniWarePage() {
               has endured.
             </p>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="buying">
@@ -1068,6 +1096,9 @@ export default function KutaniWarePage() {
               the tradition.
             </p>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
 
         <section id="faq">
@@ -1082,7 +1113,7 @@ export default function KutaniWarePage() {
 
           <div className="mt-10 divide-y divide-stone-200 border-y border-stone-200">
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 Is Kutani Ware pottery or porcelain?
               </summary>
 
@@ -1094,7 +1125,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 What are the five colors of Kutani Ware?
               </summary>
 
@@ -1107,7 +1138,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 Is all Kutani Ware hand-painted?
               </summary>
 
@@ -1121,7 +1152,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 What is Ko-Kutani?
               </summary>
 
@@ -1135,7 +1166,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 Where is Kutani Ware made today?
               </summary>
 
@@ -1149,7 +1180,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 Can Kutani Ware be used for everyday meals?
               </summary>
 
@@ -1162,7 +1193,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 How should I wash and care for Kutani Ware?
               </summary>
 
@@ -1187,7 +1218,7 @@ export default function KutaniWarePage() {
             </details>
 
             <details className="group py-6">
-              <summary className="cursor-pointer list-none text-lg font-semibold">
+              <summary className="cursor-pointer list-inside text-lg font-semibold marker:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
                 What should I buy as my first piece of Kutani Ware?
               </summary>
 
@@ -1200,6 +1231,9 @@ export default function KutaniWarePage() {
               </p>
             </details>
           </div>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
         <section id="sources">
           <h2 className="text-3xl font-semibold">
@@ -1268,6 +1302,9 @@ export default function KutaniWarePage() {
               </a>
             </li>
           </ul>
+          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+            <span aria-hidden="true">↑</span> Back to contents
+          </a>
         </section>
       </article>
     </main>
