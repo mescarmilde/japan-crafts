@@ -51,7 +51,7 @@ export default function KutaniProcess() {
       </ol>
       <figcaption className="mt-8 border-t border-stone-200 pt-5 text-sm leading-6 text-stone-600">
         <strong className="font-semibold text-[#355c49]">The key sequence: fire → paint → fire again.</strong>{" "}
-        This is a simplified overview of overglaze-decorated Kutani ware. Methods vary, and gold decoration may require another firing.
+        This is a simplified overview of overglaze-decorated Kutani Ware. Methods vary, and gold decoration may require another firing.
       </figcaption>
     </figure>
   );

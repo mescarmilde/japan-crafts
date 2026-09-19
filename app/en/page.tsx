@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Japan Crafts | Stories Behind Japanese Craftsmanship",
+  description: "Explore Japanese traditional crafts through their history, geography, materials, makers, and places of origin.",
+};
+
 export default function EnglishHomePage() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-24">

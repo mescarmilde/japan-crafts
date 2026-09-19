@@ -47,7 +47,7 @@ export default function KutaniRegionMap() {
         </div>
 
         <svg viewBox="0 0 640 570" role="img" aria-labelledby="kutani-region-title kutani-region-desc" className="h-auto w-full">
-          <title id="kutani-region-title">Kutani ware places in southern Ishikawa</title>
+          <title id="kutani-region-title">Kutani Ware places in southern Ishikawa</title>
           <desc id="kutani-region-desc">North is up. Kanazawa lies northeast of Nomi and Komatsu. Yamashiro Onsen lies southwest of Komatsu. The historic Kutani kiln area is farther south and inland. Numbered markers show approximate areas, not precise entrance locations.</desc>
           <defs><clipPath id="kutani-map-clip"><rect width="640" height="570" rx="8" /></clipPath></defs>
           <g clipPath="url(#kutani-map-clip)">

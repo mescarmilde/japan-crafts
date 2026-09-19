@@ -16,7 +16,7 @@ export default function AboutPage() {
         <section aria-labelledby="purpose">
           <h2 id="purpose" className="text-2xl font-semibold text-stone-900">Start with curiosity</h2>
           <p className="mt-4">Japan Crafts introduces Japanese crafts to English-speaking readers. Each guide brings together history, regional context, distinctive styles, and the making process, with practical starting points for visiting and choosing a piece.</p>
-          <p className="mt-4">The collection begins with Kutani ware from Ishikawa Prefecture. You do not need specialist knowledge to start exploring.</p>
+          <p className="mt-4">The collection begins with Kutani Ware from Ishikawa Prefecture. You do not need specialist knowledge to start exploring.</p>
         </section>
         <section aria-labelledby="sources">
           <h2 id="sources" className="text-2xl font-semibold text-stone-900">Sources and context</h2>

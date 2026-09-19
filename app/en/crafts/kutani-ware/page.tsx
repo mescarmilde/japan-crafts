@@ -36,7 +36,7 @@ const kutaniPhotos = {
     "width": 3291,
     "height": 3195,
     "alt": "Kutani dish with figures, flowers, colorful panels, and detailed gold decoration.",
-    "caption": "Shoza-style Kutani ware, one of Kutani's many visual traditions.",
+    "caption": "Shoza-style Kutani Ware, one of Kutani's many visual traditions.",
     "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Shoza_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09847.jpg"
   },
   "iidaya": {
@@ -60,7 +60,7 @@ const kutaniPhotos = {
     "width": 4320,
     "height": 3240,
     "alt": "Seventeenth-century Kutani plate with sweeping green leaves, a purple flower, and a yellow ground.",
-    "caption": "Plate catalogued as Kutani ware, late 17th century. Art Institute of Chicago.",
+    "caption": "Plate catalogued as Kutani Ware, late 17th century. Art Institute of Chicago.",
     "source": "https://commons.wikimedia.org/wiki/File:Kutani-Ware_Plate,_late_17th_century,_Japan,_porcelain_with_enamel_-_Art_Institute_of_Chicago_-_DSC00224.JPG"
   },
   "yoshidaya": {

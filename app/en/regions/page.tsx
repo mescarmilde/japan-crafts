@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Craft Regions of Japan | Japan Crafts",
-  description: "Explore Japanese crafts through the places that shaped them, starting with Kutani ware in Ishikawa Prefecture.",
+  description: "Explore Japanese crafts through the places that shaped them, starting with Kutani Ware in Ishikawa Prefecture.",
 };
 
 export default function RegionsPage() {
@@ -17,10 +17,10 @@ export default function RegionsPage() {
       </p>
 
       <section aria-labelledby="ishikawa-title" className="mt-12 rounded-lg border border-stone-200 bg-white p-6 sm:p-10">
-        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">Hokuriku · 石川県</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">Hokuriku · 北陸</p>
         <h2 id="ishikawa-title" className="mt-3 text-3xl font-semibold">Ishikawa Prefecture</h2>
         <p className="mt-5 max-w-2xl leading-8 text-stone-600">
-          Begin with Kutani ware: colorful porcelain connected to Kaga, Komatsu,
+          Begin with Kutani Ware: colorful porcelain connected to Kaga, Komatsu,
           and Nomi. Follow its history, discover its painting styles, and find
           museums and workshops to explore.
         </p>
