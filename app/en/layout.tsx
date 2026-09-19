@@ -8,7 +8,7 @@ export default function EnglishLayout({
   return (
     <div className="min-h-screen bg-[#faf9f6] text-stone-900">
       <header className="border-b border-stone-200 bg-[#faf9f6]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center">
           <Link
             href="/en"
             className="text-lg font-semibold tracking-[0.15em]"
@@ -16,13 +16,13 @@ export default function EnglishLayout({
             JAPAN CRAFTS
           </Link>
 
-          <nav className="flex gap-6 text-sm">
-            <Link href="/en/crafts" className="hover:text-stone-500">
+          <nav aria-label="Main navigation" className="flex flex-wrap gap-x-6 text-sm">
+            <Link href="/en/crafts" className="inline-flex min-h-11 items-center hover:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4">
               Crafts
             </Link>
 
-            <span>Regions</span>
-            <span>About</span>
+            <Link href="/en/regions" className="inline-flex min-h-11 items-center hover:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4">Regions</Link>
+            <Link href="/en/about" className="inline-flex min-h-11 items-center hover:text-stone-500 focus-visible:outline-2 focus-visible:outline-offset-4">About</Link>
           </nav>
         </div>
       </header>
