@@ -23,6 +23,14 @@ const sections = [
 ];
 
 const kutaniPhotos = {
+  "eiraku": {
+    "src": "/images/kutani/eiraku-wazen-bowl.jpg",
+    "width": 3176,
+    "height": 3098,
+    "alt": "Bowl by Eiraku Wazen with gold dragons, a phoenix, and flowers on a red ground surrounding a blue-and-white floral center.",
+    "caption": "Bowl by Eiraku Wazen, photographed at the Ishikawa Prefectural Museum of Traditional Arts and Crafts.",
+    "source": "https://commons.wikimedia.org/wiki/File:Bowl_by_Eiraku_Wazen_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09844.jpg"
+  },
   "shoza": {
     "src": "/images/kutani/shoza-style.jpg",
     "width": 3291,
@@ -614,6 +622,7 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 Red and Gold Luxury
               </h3>
+              <KutaniPhoto photo="eiraku" />
 
               <p className="mt-4 leading-7 text-stone-600">
                 The Eiraku style introduced a refined Kinrande approach associated
