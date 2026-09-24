@@ -1,3 +1,5 @@
+import CraftProcess from "../_components/CraftProcess";
+
 const stages = [
   ["Porcelain stone", "Materials vary; not only Izumiyama.", "stone"],
   ["Clay preparation", "Crush, refine, and knead.", "clay"],
@@ -9,6 +11,42 @@ const stages = [
   ["Optional overglaze decoration", "Add enamels and fire again, when used.", "color"],
 ] as const;
 
+
+const details = [
+  [
+    "Porcelain stone",
+    "Material is selected for the intended body. Izumiyama is historically important, but Amakusa stone and other material combinations are also used."
+  ],
+  [
+    "Clay preparation",
+    "The stone is crushed, refined with water, dewatered, and kneaded into a workable body. Preparing the material is a specialist job of its own."
+  ],
+  [
+    "Forming and drying",
+    "A potter may use a wheel or a mold-based method, depending on the shape and production requirements. The formed piece must dry before firing."
+  ],
+  [
+    "Bisque firing",
+    "An initial firing, often around 900°C in the examples described by Saga Prefecture, prepares the piece for the next stages."
+  ],
+  [
+    "Underglaze painting",
+    "For sometsuke, the design is painted with gosu (呉須), a cobalt-based pigment, before the transparent glaze is applied."
+  ],
+  [
+    "Glazing",
+    "Glaze covers the body and any underglaze decoration. Its appearance changes during the high firing."
+  ],
+  [
+    "High firing",
+    "A firing around 1,300°C is a representative example. Blue-and-white decoration is developed beneath the glaze; a piece may be complete at this stage."
+  ],
+  [
+    "Optional overglaze decoration",
+    "Enamels are applied to the fired glaze and fixed in a lower-temperature firing. Metallic decoration can involve further work. Temperatures depend on the materials and process."
+  ]
+];
+
 function ProcessIcon({ kind }: { kind: (typeof stages)[number][2] }) {
   return <svg viewBox="0 0 80 80" aria-hidden="true" className="h-16 w-16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     {kind === "stone" ? <><path d="m12 57 9-27 21-10 22 15 4 24-24 9Z" fill="#ddd6c5"/><path d="m21 30 20 14 23-9M41 44l3 24"/></>
@@ -18,16 +56,7 @@ function ProcessIcon({ kind }: { kind: (typeof stages)[number][2] }) {
   </svg>;
 }
 
+
 export default function AritaProcess() {
-  return <figure aria-labelledby="arita-process-heading" className="mt-10 border border-stone-200 bg-stone-50 p-5 sm:p-6">
-    <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">From stone to porcelain</p>
-    <h3 id="arita-process-heading" className="mt-2 text-2xl font-semibold">Making the body, choosing the decoration</h3>
-    <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {stages.map(([title,description,kind],index)=><li key={title} className={`rounded-lg border p-4 ${index === 7 ? "border-dashed border-[#355c49] bg-[#e3ece6]" : "border-stone-200 bg-white"}`}>
-        <div className="flex items-center justify-between text-stone-600"><ProcessIcon kind={kind}/><span aria-hidden="true" className="text-sm text-stone-400">0{index+1}</span></div>
-        <h4 className="mt-3 text-sm font-semibold leading-6">{title}</h4><p className="mt-2 text-sm leading-6 text-stone-600">{description}</p>
-      </li>)}
-    </ol>
-    <figcaption className="mt-6 border-t border-stone-200 pt-5 text-sm leading-6 text-stone-600">A simplified sequence, not a rule for every kiln or piece. Underglaze painting is used for sometsuke; overglaze decoration is optional and adds another firing after the high firing.</figcaption>
-  </figure>;
+  return <CraftProcess id="arita-process" eyebrow="From stone to porcelain" title="Making the body, choosing the decoration" steps={stages.map(([shortLabel, summary, kind], index) => ({ number: String(index + 1).padStart(2, "0"), title: details[index][0], description: details[index][1], shortLabel, summary, icon: <ProcessIcon kind={kind} />, optional: index === 7 }))} caveat="A simplified sequence, not a rule for every kiln or piece. Underglaze painting is used for sometsuke; overglaze decoration is optional and adds another firing after the high firing." note={"The key distinction is when decoration is added: sometsuke is painted before glazing and high firing; overglaze enamels are added afterward and fired again. The temperatures above are representative examples, not standards for every product. Different sources describe different overglaze firing temperatures."} />;
 }

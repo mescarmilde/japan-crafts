@@ -1,14 +1,49 @@
+import CraftProcess from "../_components/CraftProcess";
+
 const steps = [
-  { title: "Porcelain stone", text: "Quarry the raw material.", icon: "stone" },
-  { title: "Prepare clay", text: "Crush, refine, and knead.", icon: "clay" },
-  { title: "Shape & dry", text: "Form the vessel and let it dry.", icon: "shape" },
-  { title: "Bisque fire", text: "Give the dried body its first firing.", icon: "bisque" },
-  { title: "Glaze & fire", text: "Create a hard, glazed porcelain body.", icon: "glaze" },
-  { title: "Paint", text: "Apply overglaze colors to the fired surface.", icon: "paint" },
-  { title: "Fire the colors", text: "Fire again to develop the decoration.", icon: "finish" },
+  {
+    "title": "Stone to Porcelain Clay",
+    "description": "Porcelain stone is quarried, crushed into a fine powder, mixed with water, and refined to remove unwanted material. Excess water is then removed until the material reaches the right consistency for working.",
+    "number": "01",
+    "shortLabel": "Stone & clay",
+    "summary": "Quarry, crush, and refine the raw material.",
+    "kind": "stone"
+  },
+  {
+    "title": "Shaping and Drying",
+    "description": "The clay is kneaded to remove air and then shaped. Round vessels are often formed on a potter's wheel, while other forms may require hand-building or different forming techniques. The piece is then dried and carefully finished.",
+    "number": "02",
+    "shortLabel": "Shape & dry",
+    "summary": "Form the vessel and let it dry.",
+    "kind": "shape"
+  },
+  {
+    "title": "Bisque, Glaze, and High Firing",
+    "description": "The dried piece is first bisque-fired at around 800°C. After glazing, it is fired again at roughly 1,300°C, producing the hard white porcelain surface that will become the canvas for Kutani decoration.",
+    "number": "03",
+    "shortLabel": "Bisque, glaze & fire",
+    "summary": "Create a hard, glazed porcelain body.",
+    "kind": "glaze"
+  },
+  {
+    "title": "Overglaze Painting",
+    "description": "Artists paint over the already glazed porcelain. Fine outlines may first define the composition, followed by layers of colored overglaze enamels. At this stage, the pigments do not necessarily show the brilliant colors they will have after firing.",
+    "number": "04",
+    "shortLabel": "Overglaze painting",
+    "summary": "Apply overglaze colors to the fired surface.",
+    "kind": "paint"
+  },
+  {
+    "title": "Color Firing and Finishing",
+    "description": "The decorated piece is fired again, generally between about 800°C and 1,000°C, allowing the overglaze colors to develop. Pieces with gold or silver decoration may require an additional lower-temperature firing.",
+    "number": "05",
+    "shortLabel": "Color firing",
+    "summary": "Fire again to develop the decoration.",
+    "kind": "finish"
+  }
 ] as const;
 
-function ProcessIcon({ kind }: { kind: (typeof steps)[number]["icon"] }) {
+function ProcessIcon({ kind }: { kind: "stone" | "clay" | "shape" | "bisque" | "glaze" | "paint" | "finish" }) {
   return (
     <svg viewBox="0 0 80 80" aria-hidden="true" focusable="false" className="h-16 w-16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       {kind === "stone" ? (
@@ -28,31 +63,7 @@ function ProcessIcon({ kind }: { kind: (typeof steps)[number]["icon"] }) {
   );
 }
 
+
 export default function KutaniProcess() {
-  return (
-    <figure aria-labelledby="kutani-process-heading" className="mt-10 border border-stone-200 bg-stone-50 p-5 sm:p-6">
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">From stone to color</p>
-      <h3 id="kutani-process-heading" className="mt-2 text-2xl font-semibold text-stone-900">How a Kutani piece takes shape</h3>
-      <p className="mt-3 text-sm leading-6 text-stone-600">First make the porcelain body. Then paint its glazed surface and fire it again.</p>
-      <ol className="mt-8 grid gap-8 lg:grid-cols-7 lg:gap-3">
-        {steps.map((step, index) => (
-          <li key={step.icon} className="relative flex gap-4 lg:flex-col lg:items-center lg:gap-3 lg:text-center">
-            <div className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-full ${index < 5 ? "bg-[#ece9df] text-stone-600" : "bg-[#e3ece6] text-[#355c49]"}`}>
-              <ProcessIcon kind={step.icon} />
-            </div>
-            <div>
-              <p className="text-xs font-medium tracking-wider text-stone-500">0{index + 1}</p>
-              <h4 className="mt-1 text-sm font-semibold leading-5 text-stone-900">{step.title}</h4>
-              <p className="mt-2 text-sm leading-6 text-stone-600 lg:text-xs lg:leading-5">{step.text}</p>
-            </div>
-            {index < steps.length - 1 && <span aria-hidden="true" className="absolute -bottom-7 left-8 text-xl text-stone-400 lg:-right-3 lg:bottom-auto lg:left-auto lg:top-7"><span className="lg:hidden">↓</span><span className="hidden lg:inline">→</span></span>}
-          </li>
-        ))}
-      </ol>
-      <figcaption className="mt-8 border-t border-stone-200 pt-5 text-sm leading-6 text-stone-600">
-        <strong className="font-semibold text-[#355c49]">The key sequence: fire → paint → fire again.</strong>{" "}
-        This is a simplified overview of overglaze-decorated Kutani Ware. Methods vary, and gold decoration may require another firing.
-      </figcaption>
-    </figure>
-  );
+  return <CraftProcess id="kutani-process" eyebrow="From stone to color" title="How a Kutani piece takes shape" introduction="First make the porcelain body. Then paint its glazed surface and fire it again." steps={steps.map(step => ({ ...step, icon: <ProcessIcon kind={step.kind} /> }))} caveat="The key sequence: fire → paint → fire again. This is a simplified overview of overglaze-decorated Kutani Ware. Methods vary, and gold decoration may require another firing." note={"A finished piece can therefore be the result of several separate processes and firings. Kutani Ware is not defined only by the person who shapes the vessel: clay producers, form makers, painters, kiln workers, and other specialists can all contribute to the finished object."} />;
 }

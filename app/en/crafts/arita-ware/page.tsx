@@ -149,16 +149,6 @@ const styles = [
   { photo: aritaPhotos.kinrande, name: "Kinrande (金襴手)", kind: "Decoration · late 17th- and early 18th-century export wares", text: "In export Imari, this often combines underglaze blue, colored enamels, and gold in richly organized patterns. Look for the way gold picks out borders and details. It is one important decorative approach within Ko-Imari, not another name for every old Imari piece." },
 ];
 
-const steps = [
-  ["Porcelain stone", "Material is selected for the intended body. Izumiyama is historically important, but Amakusa stone and other material combinations are also used."],
-  ["Clay preparation", "The stone is crushed, refined with water, dewatered, and kneaded into a workable body. Preparing the material is a specialist job of its own."],
-  ["Forming and drying", "A potter may use a wheel or a mold-based method, depending on the shape and production requirements. The formed piece must dry before firing."],
-  ["Bisque firing", "An initial firing, often around 900°C in the examples described by Saga Prefecture, prepares the piece for the next stages."],
-  ["Underglaze painting", "For sometsuke, the design is painted with gosu (呉須), a cobalt-based pigment, before the transparent glaze is applied."],
-  ["Glazing", "Glaze covers the body and any underglaze decoration. Its appearance changes during the high firing."],
-  ["High firing", "A firing around 1,300°C is a representative example. Blue-and-white decoration is developed beneath the glaze; a piece may be complete at this stage."],
-  ["Optional overglaze decoration", "Enamels are applied to the fired glaze and fixed in a lower-temperature firing. Metallic decoration can involve further work. Temperatures depend on the materials and process."],
-];
 
 const places = [
   { name: "Kyushu Ceramic Museum", best: "Best for history", description: "Start with objects. The Shibata Collection offers a way to compare forms, decoration, and periods before you explore the town where they were made.", website: "https://saga-museum.jp/ceramic/", mapQuery: "Kyushu Ceramic Museum Arita Saga Japan", note: "Check current exhibitions and visitor information before visiting." },
@@ -295,11 +285,7 @@ export default function AritaWarePage() {
         <Section id="production">
           <p className="mt-5 leading-8 text-stone-700">The sequence below is a guide, not a recipe followed by every kiln. Materials, forming methods, decoration, and firing conditions vary. Modern Arita porcelain is not all made from Izumiyama stone.</p>
           <AritaProcess />
-          <ol className="mt-8 grid gap-5 sm:grid-cols-2">
-            {steps.map(([title, description], index) => <li key={title} className="border-l-2 border-stone-300 pl-5"><p className="text-sm text-stone-500">Step {index + 1}</p><h3 className="mt-1 text-xl font-semibold">{title}</h3><p className="mt-3 leading-7 text-stone-700">{description}</p></li>)}
-          </ol>
-          <p className="mt-8 leading-8 text-stone-700">The key distinction is when decoration is added: sometsuke is painted before glazing and high firing; overglaze enamels are added afterward and fired again. The temperatures above are representative examples, not standards for every product. Different sources describe different overglaze firing temperatures.</p>
-        </Section>
+          </Section>
 
         <Section id="world">
           <div className={prose}>
