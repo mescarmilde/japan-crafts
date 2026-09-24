@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import BackToContents from "../_components/BackToContents";
 import VisitLinks from "../_components/VisitLinks";
+import CraftPhoto from "../_components/CraftPhoto";
+import AritaProcess from "./AritaProcess";
+import { aritaPhotos } from "./aritaPhotos";
 
 export const metadata: Metadata = {
   title: "Arita Ware (有田焼): History, Styles, Making & Travel Guide",
@@ -57,6 +60,56 @@ const sources = {
   S57: { title: "Koransha — Product Handling", url: "https://online.koransha.co.jp/guide/shouhin.html", note: "Microwave labels, washing, metallic decoration, and storage." },
 } as const;
 
+const sourceGroups = [
+  {
+    "title": "History, Archaeology & Museums",
+    "ids": [
+      "S02",
+      "S05",
+      "S07",
+      "S09",
+      "S10",
+      "S11",
+      "S13",
+      "S14",
+      "S16",
+      "S26",
+      "S27",
+      "S29",
+      "S53"
+    ]
+  },
+  {
+    "title": "Global Trade & Collections",
+    "ids": [
+      "S18",
+      "S20",
+      "S23",
+      "S24"
+    ]
+  },
+  {
+    "title": "Contemporary Industry & Making",
+    "ids": [
+      "S03",
+      "S31",
+      "S35",
+      "S38",
+      "S39",
+      "S51",
+      "S52"
+    ]
+  },
+  {
+    "title": "Visiting & Care",
+    "ids": [
+      "S01",
+      "S56",
+      "S57"
+    ]
+  }
+] as const;
+
 type SectionId = (typeof sections)[number]["id"];
 type SourceId = keyof typeof sources;
 const prose = "mt-5 space-y-6 leading-8 text-stone-700";
@@ -89,11 +142,11 @@ function SourceNotes({ ids }: { ids: SourceId[] }) {
 }
 
 const styles = [
-  { name: "Early Imari (初期伊万里)", kind: "Period and style · 1610s to the mid-17th century", text: "A name used for early Japanese porcelain, much of it blue and white. Look at the outlines of bowls and dishes, then at landscapes and other motifs that reflect Chinese models. The term describes an early phase of production, not a single painting technique." },
-  { name: "Sometsuke (染付)", kind: "Technique · from early production to the present", text: "Blue-and-white decoration painted with cobalt-based pigment beneath a transparent glaze. Compare fine outlines with broader washes of blue. Because the painting sits under the glaze, it belongs to a different stage of making from overglaze enamelling." },
-  { name: "Kakiemon style (柿右衛門様式)", kind: "Style · developed in the later 17th century", text: "Fine enamel painting and carefully balanced areas of undecorated porcelain invite you to look at the space around a motif as well as the motif itself. Warm, milky-white nigoshide (濁手) is especially associated with the tradition, though the style also includes pieces combining underglaze blue and enamels." },
-  { name: "Iroe (色絵)", kind: "Technique · developed in the 1640s and still used today", text: "Colored enamels are applied over a previously fired glaze and fired again at a lower temperature. Look at how colored areas relate to the white surface or to underglaze blue. Iroe is a method shared by different styles, rather than one fixed set of patterns." },
-  { name: "Kinrande (金襴手)", kind: "Decoration · late 17th- and early 18th-century export wares", text: "In export Imari, this often combines underglaze blue, colored enamels, and gold in richly organized patterns. Look for the way gold picks out borders and details. It is one important decorative approach within Ko-Imari, not another name for every old Imari piece." },
+  { photo: aritaPhotos.earlyImari, name: "Early Imari (初期伊万里)", kind: "Period and style · 1610s to the mid-17th century", text: "A name used for early Japanese porcelain, much of it blue and white. Look at the outlines of bowls and dishes, then at landscapes and other motifs that reflect Chinese models. The term describes an early phase of production, not a single painting technique." },
+  { photo: aritaPhotos.sometsuke, name: "Sometsuke (染付)", kind: "Technique · from early production to the present", text: "Blue-and-white decoration painted with cobalt-based pigment beneath a transparent glaze. Compare fine outlines with broader washes of blue. Because the painting sits under the glaze, it belongs to a different stage of making from overglaze enamelling." },
+  { photo: aritaPhotos.kakiemon, name: "Kakiemon style (柿右衛門様式)", kind: "Style · developed in the later 17th century", text: "Fine enamel painting and carefully balanced areas of undecorated porcelain invite you to look at the space around a motif as well as the motif itself. Warm, milky-white nigoshide (濁手) is especially associated with the tradition, though the style also includes pieces combining underglaze blue and enamels." },
+  { photo: aritaPhotos.iroe, name: "Iroe (色絵)", kind: "Technique · developed in the 1640s and still used today", text: "Colored enamels are applied over a previously fired glaze and fired again at a lower temperature. Look at how colored areas relate to the white surface or to underglaze blue. Iroe is a method shared by different styles, rather than one fixed set of patterns." },
+  { photo: aritaPhotos.kinrande, name: "Kinrande (金襴手)", kind: "Decoration · late 17th- and early 18th-century export wares", text: "In export Imari, this often combines underglaze blue, colored enamels, and gold in richly organized patterns. Look for the way gold picks out borders and details. It is one important decorative approach within Ko-Imari, not another name for every old Imari piece." },
 ];
 
 const steps = [
@@ -109,10 +162,10 @@ const steps = [
 
 const places = [
   { name: "Kyushu Ceramic Museum", best: "Best for history", description: "Start with objects. The Shibata Collection offers a way to compare forms, decoration, and periods before you explore the town where they were made.", website: "https://saga-museum.jp/ceramic/", mapQuery: "Kyushu Ceramic Museum Arita Saga Japan", note: "Check current exhibitions and visitor information before visiting." },
-  { name: "Arita History and Folklore Museum, East", best: "Best for understanding production", description: "Near Izumiyama, this museum connects excavated material with the work of making porcelain. Water-powered crushing equipment and an enamel kiln help make that work tangible.", website: "https://www.town.arita.lg.jp/kiji003586/index.html", mapQuery: "有田町歴史民俗資料館 東館", note: "Check opening days and available language support with the museum." },
+  { name: "Arita History and Folklore Museum East", best: "Best for understanding production", description: "Near Izumiyama, this museum connects excavated material with the work of making porcelain. Water-powered crushing equipment and an enamel kiln help make that work tangible.", website: "https://www.town.arita.lg.jp/kiji003586/index.html", mapQuery: "有田町歴史民俗資料館 東館", note: "Check opening days and available language support with the museum." },
   { name: "Izumiyama Quarry (泉山磁石場)", best: "Best for understanding raw materials", description: "The excavated landscape gives a physical scale to the material behind the porcelain. Pair it with the nearby museum to connect the quarry with the processes that turned stone into clay.", website: "https://www.arita.jp/spot/post_16.html", mapQuery: "泉山磁石場 有田町", note: "Check the official visitor guidance and follow the site’s access rules." },
   { name: "Tozan Shrine (陶山神社)", best: "Best for seeing the town", description: "Include the shrine in a town walk to consider how Arita remembers its makers and its ceramic history. It adds a different perspective from museum displays and shops.", website: "https://arita-toso.net/", mapQuery: "陶山神社 有田町", note: "Check access information before planning your route." },
-  { name: "Arita Sera", best: "Best for shopping and contemporary Arita", description: "This concentration of porcelain shops makes it possible to compare everyday tableware and contemporary design. It also reveals the role of merchants in bringing a production region’s work to customers.", website: "https://www.arita.gr.jp/", mapQuery: "Arita Sera Saga Japan", note: "Individual shops and facilities may keep different schedules." },
+  { name: "Arita Será", best: "Best for shopping and contemporary Arita", description: "This concentration of porcelain shops makes it possible to compare everyday tableware and contemporary design. It also reveals the role of merchants in bringing a production region’s work to customers.", website: "https://www.arita.gr.jp/", mapQuery: "Arita Será Saga Japan", note: "Individual shops and facilities may keep different schedules." },
   { name: "Arita Porcelain Park — Arita Ware Workshop", best: "Best for trying a process", description: "Underglaze painting, hand-building, and wheel experiences offer an introduction to working with a ceramic object. A hands-on session can make the production sequence easier to understand.", website: "https://www.arita-touki.com/experience", mapQuery: "有田ポーセリンパーク 有田焼工房", note: "Confirm reservations, language support, firing time, and collection or overseas shipping before booking." },
 ];
 
@@ -158,7 +211,6 @@ export default function AritaWarePage() {
             <p>Rather than describing a single visual style, “Arita Ware” refers to a production tradition that developed around a town where raw materials, specialized skills, kilns, merchants, and distribution networks became closely connected.</p>
             <p>Historically, ceramics produced in and around Arita were also traded and known under names such as Imari (伊万里) and Hizen (肥前). Understanding Arita Ware therefore means looking not only at how the porcelain was made, but also at how it moved through Japan and eventually into overseas markets.</p>
           </div>
-          <SourceNotes ids={["S01", "S13"]} />
         </Section>
 
         <Section id="history">
@@ -200,15 +252,14 @@ export default function AritaWarePage() {
             <h3 className="font-semibold">Reading the connections</h3>
             <p className="mt-3 leading-8 text-stone-700">Taken together, these histories suggest a useful way to understand Arita: local resources became an industry when knowledge, people, political organization, transportation, and demand were connected. This is a way of interpreting the evidence, rather than a single recorded explanation of its success.</p>
           </aside>
-          <SourceNotes ids={["S09", "S10", "S11", "S14", "S16"]} />
         </Section>
 
         <Section id="arita-and-imari">
           <p className="mt-5 leading-8 text-stone-700">The names overlap because making, shipping, and collecting porcelain produce different kinds of labels.</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className={card}><h3 className="text-xl font-semibold">Arita Ware</h3><p className="mt-4 leading-7 text-stone-700">A production tradition centered on Arita and its surroundings. It covers many forms and decorative approaches.</p></div>
-            <div className={card}><h3 className="text-xl font-semibold">Imari Ware (伊万里焼)</h3><p className="mt-4 leading-7 text-stone-700">Historically, a wider trading name associated with the port of Imari. It included porcelain from Arita and other Hizen centers, such as Hasami and Mikawachi.</p></div>
-            <div className={card}><h3 className="text-xl font-semibold">Ko-Imari (古伊万里)</h3><p className="mt-4 leading-7 text-stone-700">“Old Imari,” commonly used for Edo-period Hizen porcelain. Its boundaries vary with the museum or collecting context; it does not mean only gold-decorated export ware.</p></div>
+            <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Production tradition</p><h3 className="text-xl font-semibold">Arita Ware</h3><p className="mt-4 leading-7 text-stone-700">A production tradition centered on Arita and its surroundings. It covers many forms and decorative approaches.</p></div>
+            <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Trade and historical name</p><h3 className="text-xl font-semibold">Imari Ware (伊万里焼)</h3><p className="mt-4 leading-7 text-stone-700">Historically, a wider trading name associated with the port of Imari. It included porcelain from Arita and other Hizen centers, such as Hasami and Mikawachi.</p></div>
+            <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Historical classification</p><h3 className="text-xl font-semibold">Ko-Imari (古伊万里)</h3><p className="mt-4 leading-7 text-stone-700">“Old Imari,” commonly used for Edo-period Hizen porcelain. Its boundaries vary with the museum or collecting context; it does not mean only gold-decorated export ware.</p></div>
           </div>
           <div className={prose}>
             <p>The familiar explanation—made in Arita, shipped from Imari—is a useful starting point, but leaves out part of the story. Historical Imari was not exclusively Arita-made, and the name relates to domestic distribution as well as overseas trade.</p>
@@ -224,13 +275,12 @@ export default function AritaWarePage() {
             <p>Some Kakiemon-style compositions give undecorated space an active role. Dense gold decoration offers a different experience, while contemporary white porcelain may place the emphasis on shape and surface rather than painted imagery.</p>
             <p>These are choices within a broad production tradition. Arita cannot be reduced to blue and white, just as <Link href="/en/crafts/kutani-ware" className={textLink}>Kutani Ware</Link> cannot be understood through color alone. Both traditions include overglaze decoration.</p>
           </div>
-          <SourceNotes ids={["S01", "S27", "S31"]} />
         </Section>
 
         <Section id="styles">
           <p className="mt-5 leading-8 text-stone-700">These names describe different things: an early period, a painting technique, or an approach to composition. Use them as ways to look more closely, rather than as mutually exclusive boxes.</p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {styles.map((style) => <div key={style.name} className={card}><p className="text-sm leading-6 text-stone-500">{style.kind}</p><h3 className="mt-2 text-xl font-semibold">{style.name}</h3><p className="mt-4 leading-7 text-stone-700">{style.text}</p></div>)}
+            {styles.map((style) => <div key={style.name} className={card}><p className="text-sm leading-6 text-stone-500">{style.kind}</p><h3 className="mt-2 text-xl font-semibold">{style.name}</h3><CraftPhoto {...style.photo} /><p className="mt-4 leading-7 text-stone-700">{style.text}</p></div>)}
           </div>
           <div className={prose}>
             <p>The first Sakaida Kakiemon (酒井田柿右衛門) is traditionally credited with an early breakthrough in overglaze enamelling. The Agency for Cultural Affairs itself presents that origin as a transmitted account. The development of color decoration should not be reduced to an unquestioned claim about one inventor.</p>
@@ -240,16 +290,15 @@ export default function AritaWarePage() {
             <h3 className="text-xl font-semibold">What about Nabeshima?</h3>
             <p className="mt-4 leading-8 text-stone-700">Nabeshima (鍋島) belongs to the history of Saga Domain kilns and porcelain made for presentation, including gifts to the shogun&apos;s household. Its purpose and controlled production differed from commercial Imari. The domain kiln developed at Okawachiyama (大川内山), now in Imari City. This makes Nabeshima more than another pattern to add to a list of Arita designs.</p>
           </aside>
-          <SourceNotes ids={["S18", "S23", "S26", "S27", "S29"]} />
         </Section>
 
         <Section id="production">
           <p className="mt-5 leading-8 text-stone-700">The sequence below is a guide, not a recipe followed by every kiln. Materials, forming methods, decoration, and firing conditions vary. Modern Arita porcelain is not all made from Izumiyama stone.</p>
+          <AritaProcess />
           <ol className="mt-8 grid gap-5 sm:grid-cols-2">
             {steps.map(([title, description], index) => <li key={title} className="border-l-2 border-stone-300 pl-5"><p className="text-sm text-stone-500">Step {index + 1}</p><h3 className="mt-1 text-xl font-semibold">{title}</h3><p className="mt-3 leading-7 text-stone-700">{description}</p></li>)}
           </ol>
           <p className="mt-8 leading-8 text-stone-700">The key distinction is when decoration is added: sometsuke is painted before glazing and high firing; overglaze enamels are added afterward and fired again. The temperatures above are representative examples, not standards for every product. Different sources describe different overglaze firing temperatures.</p>
-          <SourceNotes ids={["S02", "S31"]} />
         </Section>
 
         <Section id="world">
@@ -273,13 +322,14 @@ export default function AritaWarePage() {
         </Section>
 
         <Section id="today">
-          <div className={prose}>
-            <p>Arita&apos;s contemporary challenge concerns a whole production network. A contraction in the ceramics trade affects the people who prepare materials, make molds, form bodies, decorate surfaces, fire kilns, and bring finished products to customers.</p>
-            <p>Arita Town&apos;s 2024 statistical yearbook records 305 ceramics-related trading establishments in 1997 and 93 in 2021. These figures span different survey systems, so they indicate a long-term contraction rather than a precisely comparable decline rate. They are not counts of all active kilns today.</p>
-            <p>Training matters across specialist jobs. The Saga Ceramics Research Laboratory (佐賀県窯業技術センター) supports research, technical advice, and skills development. Industry training also includes painting, wheel work, and plaster-mold making. Sustaining a named kiln depends partly on sustaining these less visible skills.</p>
-            <p>The brand 2016/ connects local manufacturing with designers from Japan and overseas. Creative Residency in Arita also brings visiting creative practitioners into contact with the region&apos;s knowledge and facilities. These collaborations offer ways to develop new work; their existence alone is not proof that exports are growing.</p>
-            <p>Innovation can begin with the material left over from making. KIHARA and Kichiemon Seitosho&apos;s awagesho, or foam decoration, reuses powdered discarded bisque-fired pieces in a decorative treatment. The documented 2022 project is one example of product development, not a measure of recycling across the entire industry.</p>
+          <p className="mt-5 leading-8 text-stone-700">Arita&apos;s contemporary challenge concerns a whole production network. A contraction in the ceramics trade affects the people who prepare materials, make molds, form bodies, decorate surfaces, fire kilns, and bring finished products to customers.</p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className={card}><p className="text-sm text-stone-500">Challenge</p><h3 className="mt-2 text-xl font-semibold">A Shrinking Production Network</h3><p className="mt-4 leading-7 text-stone-700">Arita Town&apos;s 2024 statistical yearbook records 305 ceramics-related trading establishments in 1997 and 93 in 2021. These figures span different survey systems, so they indicate a long-term contraction rather than a precisely comparable decline rate. They are not counts of all active kilns today.</p></div>
+            <div className={card}><p className="text-sm text-stone-500">Skills</p><h3 className="mt-2 text-xl font-semibold">Training the Specialists Behind Arita Ware</h3><p className="mt-4 leading-7 text-stone-700">Training matters across specialist jobs. Industry training also includes painting, wheel work, and plaster-mold making. Sustaining a named kiln depends partly on sustaining these less visible skills.</p></div>
+            <div className={card}><p className="text-sm text-stone-500">Collaboration</p><h3 className="mt-2 text-xl font-semibold">Designers and a New Generation</h3><p className="mt-4 leading-7 text-stone-700">The brand 2016/ connects local manufacturing with designers from Japan and overseas. Creative Residency in Arita also brings visiting creative practitioners into contact with the region&apos;s knowledge and facilities. These collaborations offer ways to develop new work; their existence alone is not proof that exports are growing.</p></div>
+            <div className={card}><p className="text-sm text-stone-500">Innovation</p><h3 className="mt-2 text-xl font-semibold">New Materials and New Uses</h3><p className="mt-4 leading-7 text-stone-700">The Saga Ceramics Research Laboratory (佐賀県窯業技術センター) supports research, technical advice, and skills development.</p><p className="mt-4 leading-7 text-stone-700">Innovation can begin with the material left over from making. KIHARA and Kichiemon Seitosho&apos;s awagesho, or foam decoration, reuses powdered discarded bisque-fired pieces in a decorative treatment. The documented 2022 project is one example of product development, not a measure of recycling across the entire industry.</p></div>
           </div>
+          <p className="mt-6 leading-8 text-stone-700">Arita’s future depends on the connections between specialist skills, manufacturing, and the people who bring its work to new audiences.</p>
           <SourceNotes ids={["S35", "S03", "S38", "S39", "S51", "S52"]} />
         </Section>
 
@@ -295,21 +345,19 @@ export default function AritaWarePage() {
             <p>Before buying, check whether the exact product suits the way you wash and reheat food. Gold or silver decoration, enamels, transfers, and the form of the object can affect care instructions. Do not assume that every piece of porcelain is microwave- or dishwasher-safe.</p>
             <p>Use a soft sponge and suitable kitchen dishwashing detergent, following the maker&apos;s instructions. Avoid abrasive tools and sudden temperature changes. Dry pieces before storage; protective paper between stacked pieces can reduce contact. Display pieces and antiques may need different treatment from everyday tableware.</p>
           </div>
-          <SourceNotes ids={["S23", "S56", "S57"]} />
         </Section>
 
         <Section id="faq">
           <div className="mt-8 divide-y divide-stone-200 border-y border-stone-200">
             {faqs.map((faq) => <details key={faq.question} className="py-4"><summary className="min-h-11 cursor-pointer py-2 font-semibold leading-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">{faq.question}</summary><p className="mt-3 pb-2 leading-8 text-stone-700">{faq.answer}</p></details>)}
           </div>
-          <SourceNotes ids={["S05", "S13", "S56", "S57"]} />
         </Section>
 
         <Section id="sources">
           <p className="mt-5 leading-8 text-stone-700">This guide draws on museum, municipal, prefectural, cultural-property, and industry sources. Traditional origin accounts and archaeological interpretations are distinguished in the text. Manufacturer advice is used for product care, not as a universal rule for all Arita porcelain. Most local sources are in Japanese.</p>
-          <ul className="mt-8 space-y-6">
-            {Object.entries(sources).map(([id, source]) => <li key={id} id={`source-${id}`} className="scroll-mt-6 border-l-2 border-stone-200 pl-4"><a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${source.title} (opens in a new tab)`} className={`inline-block py-2 font-medium leading-7 ${textLink}`}>{source.title} <span aria-hidden="true">↗</span></a><p className="mt-1 text-sm leading-6 text-stone-600">{source.note}</p></li>)}
-          </ul>
+          <div className="mt-8 space-y-10">
+            {sourceGroups.map((group) => <div key={group.title}><h3 className="text-xl font-semibold">{group.title}</h3><ul className="mt-4 space-y-6">{group.ids.map((id) => { const source = sources[id]; return <li key={id} id={`source-${id}`} className="scroll-mt-6 border-l-2 border-stone-200 pl-4"><a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${source.title} (opens in a new tab)`} className={`inline-block py-2 font-medium leading-7 ${textLink}`}>{source.title} <span aria-hidden="true">↗</span></a><p className="mt-1 text-sm leading-6 text-stone-600">{source.note}</p></li>; })}</ul></div>)}
+          </div>
           <p className="mt-8 text-sm leading-7 text-stone-600">Research reviewed September 2026. Visitor arrangements and product-care instructions should always be checked with the relevant institution or maker.</p>
         </Section>
       </article>
