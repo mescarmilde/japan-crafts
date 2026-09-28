@@ -1,3 +1,6 @@
+import CraftPhoto from "../_components/CraftPhoto";
+import VisitLinks from "../_components/VisitLinks";
+import BackToContents from "../_components/BackToContents";
 import KutaniProcess from "./KutaniProcess";
 import KutaniRegionMap from "./KutaniRegionMap";
 import Image from "next/image";
@@ -29,7 +32,10 @@ const kutaniPhotos = {
     "height": 3098,
     "alt": "Bowl by Eiraku Wazen with gold dragons, a phoenix, and flowers on a red ground surrounding a blue-and-white floral center.",
     "caption": "Bowl by Eiraku Wazen, photographed at the Ishikawa Prefectural Museum of Traditional Arts and Crafts.",
-    "source": "https://commons.wikimedia.org/wiki/File:Bowl_by_Eiraku_Wazen_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09844.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Bowl_by_Eiraku_Wazen_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09844.jpg",
+    "sourceLabel": "Wikimedia Commons",
+    "credit": "Daderot",
+    "license": "CC0"
   },
   "shoza": {
     "src": "/images/kutani/shoza-style.jpg",
@@ -37,7 +43,10 @@ const kutaniPhotos = {
     "height": 3195,
     "alt": "Kutani dish with figures, flowers, colorful panels, and detailed gold decoration.",
     "caption": "Shoza-style Kutani Ware, one of Kutani's many visual traditions.",
-    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Shoza_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09847.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Shoza_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09847.jpg",
+    "sourceLabel": "Wikimedia Commons",
+    "credit": "Daderot",
+    "license": "CC0"
   },
   "iidaya": {
     "src": "/images/kutani/iidaya-style.jpg",
@@ -45,7 +54,10 @@ const kutaniPhotos = {
     "height": 3462,
     "alt": "Kutani dish with finely drawn red figures and geometric patterns accented with gold.",
     "caption": "Iidaya (Aka-e) style: fine red painting with gold accents.",
-    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Iidaya_(Aka-e)_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09851.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Iidaya_(Aka-e)_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09851.jpg",
+    "sourceLabel": "Wikimedia Commons",
+    "credit": "Daderot",
+    "license": "CC0"
   },
   "mokubei": {
     "src": "/images/kutani/mokubei-style.jpg",
@@ -53,7 +65,10 @@ const kutaniPhotos = {
     "height": 3185,
     "alt": "Kutani dish with a crowd of figures in green, yellow, purple, and blue against a red ground.",
     "caption": "Mokubei style: an example of multicolored figure painting.",
-    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Mokubei_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09859.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Mokubei_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09859.jpg",
+    "sourceLabel": "Wikimedia Commons",
+    "credit": "Daderot",
+    "license": "CC0"
   },
   "early": {
     "src": "/images/kutani/kutani-17th-century.jpg",
@@ -61,7 +76,10 @@ const kutaniPhotos = {
     "height": 3240,
     "alt": "Seventeenth-century Kutani plate with sweeping green leaves, a purple flower, and a yellow ground.",
     "caption": "Plate catalogued as Kutani Ware, late 17th century. Art Institute of Chicago.",
-    "source": "https://commons.wikimedia.org/wiki/File:Kutani-Ware_Plate,_late_17th_century,_Japan,_porcelain_with_enamel_-_Art_Institute_of_Chicago_-_DSC00224.JPG"
+    "source": "https://commons.wikimedia.org/wiki/File:Kutani-Ware_Plate,_late_17th_century,_Japan,_porcelain_with_enamel_-_Art_Institute_of_Chicago_-_DSC00224.JPG",
+    "sourceLabel": "Wikimedia Commons",
+    "credit": "Daderot",
+    "license": "CC0"
   },
   "yoshidaya": {
     "src": "/images/kutani/yoshidaya-style.jpg",
@@ -69,60 +87,13 @@ const kutaniPhotos = {
     "height": 3150,
     "alt": "Kutani dish with a green, yellow, purple, and blue landscape and patterned border.",
     "caption": "Yoshidaya style: dense color without red.",
-    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Yoshidaya_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09855.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Dish,_Kutani_ware,_Yoshidaya_style_-_Ishikawa_Prefectural_Museum_of_Traditional_Arts_and_Crafts_-_Kanazawa,_Japan_-_DSC09855.jpg",
+    "sourceLabel": "Wikimedia Commons",
+    "credit": "Daderot",
+    "license": "CC0"
   }
 } as const;
 
-
-function KutaniPhoto({
-  photo,
-  layout = "card",
-  preload = false,
-}: {
-  photo: keyof typeof kutaniPhotos;
-  layout?: "card" | "wide";
-  preload?: boolean;
-}) {
-  const item = kutaniPhotos[photo];
-
-  return (
-    <figure className={layout === "wide" ? "mx-auto mt-8 max-w-xl" : "mt-4"}>
-      <Image
-        src={item.src}
-        preload={preload}
-        alt={item.alt}
-        width={item.width}
-        height={item.height}
-        sizes={layout === "wide" ? "(max-width: 623px) calc(100vw - 48px), 576px" : "(max-width: 767px) calc(100vw - 98px), 350px"}
-        className="h-auto w-full"
-      />
-      <figcaption className="mt-2 text-xs leading-5 text-stone-500">
-        {item.caption} Photo: Daderot /{" "}
-        <a
-          href={item.source}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-4"
-        >
-          Wikimedia Commons
-        </a>{" "}
-        · CC0
-      </figcaption>
-    </figure>
-  );
-}
-
-function VisitLinks({ name, website, mapQuery, note }: { name: string; website: string; mapQuery: string; note: string }) {
-  return (
-    <div className="mt-6 border-t border-stone-200 pt-5">
-      <p className="text-sm leading-6 text-stone-600">{note}</p>
-      <div className="mt-4 flex flex-wrap gap-3">
-        <a href={website} target="_blank" rel="noopener noreferrer" aria-label={name + ": official website (opens in a new tab)"} className="inline-flex min-h-11 items-center border border-[#355c49] bg-[#355c49] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#284637] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Official website <span aria-hidden="true" className="ml-2">↗</span></a>
-        <a href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapQuery)} target="_blank" rel="noopener noreferrer" aria-label={name + ": view on Google Maps (opens in a new tab)"} className="inline-flex min-h-11 items-center border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">View on Google Maps <span aria-hidden="true" className="ml-2">↗</span></a>
-      </div>
-    </div>
-  );
-}
 
 export default function KutaniWarePage() {
   return (
@@ -133,14 +104,14 @@ export default function KutaniWarePage() {
         </p>
 
         <h1 className="mt-4 text-4xl font-semibold sm:text-5xl">
-          Kutani Ware (九谷焼)
+          Kutani Ware <span className="whitespace-nowrap">(九谷焼)</span>
         </h1>
 
         <p className="mt-6 max-w-3xl text-xl leading-9 text-stone-600">
           Discover the history, geography, techniques, and people behind one
           of Japan&apos;s most distinctive porcelain traditions.
         </p>
-        <KutaniPhoto photo="shoza" layout="wide" preload />
+        <CraftPhoto {...kutaniPhotos.shoza} layout="wide" preload />
       </header>
 
       <nav id="contents" aria-label="Article contents" className="mt-12 scroll-mt-6 border-y border-stone-200 py-6">
@@ -166,21 +137,19 @@ export default function KutaniWarePage() {
         <section id="overview">
           <h2 className="text-3xl font-semibold">Overview</h2>
           <p className="mt-5 leading-8 text-stone-700">
-            Kutani Ware (九谷焼) is a celebrated tradition of Japanese porcelain
+            Kutani Ware <span className="whitespace-nowrap">(九谷焼)</span> is a celebrated tradition of Japanese porcelain
             associated with Ishikawa Prefecture. It is especially known for its vivid
             overglaze decoration, ranging from deep greens and yellows to intricate red
             and gold designs. Rather than representing a single visual style, Kutani
             Ware has developed through different kilns, artists, and periods over more
             than three centuries.
           </p>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
 
         <section id="history">
           <h2 className="text-3xl font-semibold">History</h2>
-          <KutaniPhoto photo="early" layout="wide" />
+          <CraftPhoto {...kutaniPhotos.early} layout="wide" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="border-l-2 border-stone-300 pl-4">
               <p className="text-sm text-stone-500">c. 1655</p>
@@ -234,9 +203,8 @@ export default function KutaniWarePage() {
               product.
             </p>
           </div>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <p className="mt-6 text-sm leading-6 text-stone-500">Sources: <a href="#source-history" className="underline underline-offset-4">KAM: history and styles</a>.</p>
+          <BackToContents />
         </section>
 
         <section id="why-here">
@@ -278,9 +246,7 @@ export default function KutaniWarePage() {
             </p>
           </div>
           <KutaniRegionMap />
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
 
         
@@ -361,7 +327,7 @@ export default function KutaniWarePage() {
                 Color as Painting
               </h3>
 
-              <KutaniPhoto photo="mokubei" />
+              <CraftPhoto {...kutaniPhotos.mokubei} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Gosai-de uses the five traditional Kutani colors to create pictorial
@@ -379,7 +345,7 @@ export default function KutaniWarePage() {
                 Fine Red Lines and Gold
               </h3>
 
-              <KutaniPhoto photo="iidaya" />
+              <CraftPhoto {...kutaniPhotos.iidaya} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Akae is known for extremely detailed decoration drawn primarily in
@@ -402,9 +368,7 @@ export default function KutaniWarePage() {
               and how fine the artist&apos;s brushwork is.
             </p>
           </div>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
 
         <section id="production">
@@ -428,9 +392,8 @@ export default function KutaniWarePage() {
           </div>
 
           <KutaniProcess />
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <p className="mt-6 text-sm leading-6 text-stone-500">Sources: <a href="#source-history" className="underline underline-offset-4">KAM: production and firing temperatures</a>.</p>
+          <BackToContents />
         </section>
 
         <section id="styles">
@@ -460,7 +423,7 @@ export default function KutaniWarePage() {
                 Bold, Painterly, and Free
               </h3>
 
-              <KutaniPhoto photo="early" />
+              <CraftPhoto {...kutaniPhotos.early} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Ko-Kutani is associated with the earliest period of Kutani Ware.
@@ -479,7 +442,7 @@ export default function KutaniWarePage() {
                 Chinese-Inspired Figures
               </h3>
 
-              <KutaniPhoto photo="mokubei" />
+              <CraftPhoto {...kutaniPhotos.mokubei} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 The Mokubei style developed under the influence of Kyoto potter
@@ -498,7 +461,7 @@ export default function KutaniWarePage() {
                 Dense Color Without Red
               </h3>
 
-              <KutaniPhoto photo="yoshidaya" />
+              <CraftPhoto {...kutaniPhotos.yoshidaya} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Yoshidaya revived the Aote tradition of Old Kutani. Green, yellow,
@@ -517,7 +480,7 @@ export default function KutaniWarePage() {
                 Extremely Fine Red Painting
               </h3>
 
-              <KutaniPhoto photo="iidaya" />
+              <CraftPhoto {...kutaniPhotos.iidaya} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 Iidaya is famous for Akae Saibyo, extremely detailed painting in red.
@@ -534,7 +497,7 @@ export default function KutaniWarePage() {
               <h3 className="mt-2 text-xl font-semibold">
                 Red and Gold Luxury
               </h3>
-              <KutaniPhoto photo="eiraku" />
+              <CraftPhoto {...kutaniPhotos.eiraku} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 The Eiraku style introduced a refined Kinrande approach associated
@@ -552,7 +515,7 @@ export default function KutaniWarePage() {
                 A Fusion Built for a New Era
               </h3>
 
-              <KutaniPhoto photo="shoza" />
+              <CraftPhoto {...kutaniPhotos.shoza} />
 
               <p className="mt-4 leading-7 text-stone-600">
                 The style associated with Kutani Shoza (九谷庄三) combined techniques
@@ -575,9 +538,7 @@ export default function KutaniWarePage() {
               materials, tastes, and markets.
             </p>
           </div>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
 
         <section id="visit">
@@ -754,9 +715,7 @@ export default function KutaniWarePage() {
             requirements can change. Check each facility&apos;s official information
             before visiting.
           </p>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
 
         <section id="today">
@@ -869,9 +828,8 @@ export default function KutaniWarePage() {
               has endured.
             </p>
           </div>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <p className="mt-6 text-sm leading-6 text-stone-500">Sources: <a href="#source-lead-free" className="underline underline-offset-4">Lead-free enamel research</a>{"; "}<a href="#source-training" className="underline underline-offset-4">Nomi City: support for new makers</a>{"; "}<a href="#source-timeline" className="underline underline-offset-4">Industry chronology</a>.</p>
+          <BackToContents />
         </section>
 
         <section id="buying">
@@ -1017,9 +975,7 @@ export default function KutaniWarePage() {
               the tradition.
             </p>
           </div>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
 
         <section id="faq">
@@ -1064,11 +1020,12 @@ export default function KutaniWarePage() {
               </summary>
 
               <p className="mt-4 leading-8 text-stone-600">
-                No. Kutani Ware includes a wide range of production methods, from
-                highly detailed works painted by individual artists to pieces produced
-                through workshops and specialized divisions of labor. When buying a
-                piece, check how it was decorated rather than assuming that every
-                object carrying the Kutani name was made in exactly the same way.
+                No. Some Kutani Ware is hand-painted, while other pieces use
+                transfer decoration: printed designs are applied to the ceramic
+                surface and fixed by firing. Division of labor is a separate question;
+                a piece made by several specialists can still be hand-painted.
+                Ask the maker or retailer how a particular piece was decorated.{" "}
+                <a href="#source-transfer" className="underline underline-offset-4">Read about transfer decoration.</a>
               </p>
             </details>
 
@@ -1152,9 +1109,7 @@ export default function KutaniWarePage() {
               </p>
             </details>
           </div>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
         <section id="sources">
           <h2 className="text-3xl font-semibold">
@@ -1168,6 +1123,10 @@ export default function KutaniWarePage() {
           </p>
 
           <ul className="mt-6 space-y-3 text-stone-600">
+            <li id="source-history" className="scroll-mt-24"><a href="https://www.kutaniyaki.or.jp/about_kutani/about_kutani.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">KAM — Kutani history, styles, and production (including firing temperatures)</a></li>
+            <li id="source-lead-free" className="scroll-mt-24"><a href="https://www.irii.jp/randd/theme/h20/text/guidance01_3.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Industrial Research Institute of Ishikawa — lead-free enamel development and adoption</a></li>
+            <li id="source-training" className="scroll-mt-24"><a href="https://www.city.nomi.lg.jp/docs/4217.html" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Nomi City — Kutani industry successor-development subsidy</a></li>
+            <li id="source-transfer" className="scroll-mt-24"><a href="https://nomishizukan.com/kutani/art/8" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Nomi City — transfer decoration, interview with Seikou</a></li>
             <li>
               <a
                 href="https://www.city.kaga.ishikawa.jp/kutani-mus/"
@@ -1192,12 +1151,12 @@ export default function KutaniWarePage() {
 
             <li>
               <a
-                href="https://kutani.or.jp/"
+                id="source-timeline" href="https://kutani.or.jp/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4"
               >
-                Ishikawa Kutani Ceramic Industry Association
+                Ishikawa Kutani Ceramic Industry Association — chronology (2004 lead-free enamel entry)
               </a>
             </li>
 
@@ -1223,9 +1182,7 @@ export default function KutaniWarePage() {
               </a>
             </li>
           </ul>
-          <a href="#contents" className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm text-stone-600 underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
-            <span aria-hidden="true">↑</span> Back to contents
-          </a>
+          <BackToContents />
         </section>
       </article>
     </main>
