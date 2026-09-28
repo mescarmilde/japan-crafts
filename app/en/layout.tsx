@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AnalyticsConsent from "../AnalyticsConsent";
 
 export default function EnglishLayout({
   children,
@@ -32,6 +33,7 @@ export default function EnglishLayout({
       <footer className="mt-20 border-t border-stone-200">
         <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-stone-500">
           © 2026 Japan Crafts
+          <div className="mt-3 flex flex-wrap items-center gap-x-6"><Link href="/en/privacy" className="underline underline-offset-4">Privacy &amp; cookies</Link><AnalyticsConsent enabled={process.env.VERCEL_ENV === "production"} /></div>
         </div>
       </footer>
     </div>
