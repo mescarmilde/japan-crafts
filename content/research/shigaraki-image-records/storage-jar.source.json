@@ -1,0 +1,83 @@
+{
+  "objectID": 44637,
+  "isHighlight": false,
+  "accessionNumber": "1975.268.428",
+  "accessionYear": "1975",
+  "isPublicDomain": true,
+  "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/DP-42156-001.jpg",
+  "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP-42156-001.jpg",
+  "additionalImages": [
+    "https://images.metmuseum.org/CRDImages/as/original/DP-42156-002.jpg",
+    "https://images.metmuseum.org/CRDImages/as/original/DP-42156-003.jpg",
+    "https://images.metmuseum.org/CRDImages/as/original/DP-42156-004.jpg"
+  ],
+  "constituents": null,
+  "department": "Asian Art",
+  "objectName": "Storage jar",
+  "title": "Large Storage Jar (Ōtsubo)",
+  "culture": "Japan",
+  "period": "Muromachi period (1392–1573)",
+  "dynasty": "",
+  "reign": "",
+  "portfolio": "",
+  "artistRole": "",
+  "artistPrefix": "",
+  "artistDisplayName": "",
+  "artistDisplayBio": "",
+  "artistSuffix": "",
+  "artistAlphaSort": "",
+  "artistNationality": "",
+  "artistBeginDate": "",
+  "artistEndDate": "",
+  "artistGender": "",
+  "artistWikidata_URL": "",
+  "artistULAN_URL": "",
+  "objectDate": "late 15th century",
+  "objectBeginDate": 1467,
+  "objectEndDate": 1499,
+  "medium": "Stoneware with natural ash glaze (Shigaraki ware)",
+  "dimensions": "H. 18 3/8 in. (46.7 cm); Diam. 15 1/2 in. (39.4 cm)",
+  "measurements": [
+    {
+      "elementName": "Overall",
+      "elementDescription": "CSR Survey",
+      "elementMeasurements": {
+        "Diameter": 39.37008,
+        "Height": 46.7,
+        "Weight": 12.24712
+      }
+    },
+    {
+      "elementName": "Storage",
+      "elementDescription": "CSR Survey",
+      "elementMeasurements": {
+        "Depth": 43.180088,
+        "Height": 52.705105,
+        "Weight": 6.8039556,
+        "Width": 43.180088
+      }
+    }
+  ],
+  "creditLine": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975",
+  "geographyType": "",
+  "city": "",
+  "state": "",
+  "county": "",
+  "country": "",
+  "region": "",
+  "subregion": "",
+  "locale": "",
+  "locus": "",
+  "excavation": "",
+  "river": "",
+  "classification": "Ceramics",
+  "rightsAndReproduction": "",
+  "linkResource": "",
+  "metadataDate": "2026-02-09T04:58:06.067Z",
+  "repository": "Metropolitan Museum of Art, New York, NY",
+  "objectURL": "https://www.metmuseum.org/art/collection/search/44637",
+  "tags": null,
+  "objectWikidata_URL": "",
+  "isTimelineWork": true,
+  "GalleryNumber": "223"
+}

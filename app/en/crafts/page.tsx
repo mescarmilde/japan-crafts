@@ -49,7 +49,20 @@ export default function CraftsPage() {
           </p>
           <p className="mt-6 text-sm font-medium">Explore Arita Ware →</p>
         </Link>
+        <Link
+          href="/en/crafts/shigaraki-ware"
+          className="rounded-lg border border-stone-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]"
+        >
+          <p className="text-sm text-stone-500">Shiga Prefecture</p>
+          <h2 className="mt-2 text-2xl font-semibold">Shigaraki Ware</h2>
+          <p className="mt-4 leading-7 text-stone-600">
+            Clay, fire, and changing everyday needs: a pottery region reaching
+            from tea vessels to garden ceramics and contemporary design.
+          </p>
+          <p className="mt-6 text-sm font-medium">Explore Shigaraki Ware →</p>
+        </Link>
       </section>
     </main>
   );
 }
+

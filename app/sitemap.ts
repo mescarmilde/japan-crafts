@@ -7,8 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/en/crafts",
     "/en/crafts/kutani-ware",
     "/en/crafts/arita-ware",
+    "/en/crafts/shigaraki-ware",
     "/en/regions",
     "/en/about",
     "/en/privacy",
   ].map((path) => ({ url: base + path }));
 }
+
