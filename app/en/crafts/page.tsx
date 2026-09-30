@@ -62,7 +62,12 @@ export default function CraftsPage() {
           <p className="mt-6 text-sm font-medium">Explore Shigaraki Ware →</p>
         </Link>
       </section>
+      <aside className="mt-12 border-t border-stone-200 pt-8">
+        <h2 className="text-2xl font-semibold">Not sure where to start?</h2>
+        <Link href="/en/crafts/kutani-vs-arita-vs-shigaraki" className="mt-4 inline-block py-2 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Kutani vs Arita vs Shigaraki: compare the three traditions →</Link>
+      </aside>
     </main>
   );
 }
+
 
