@@ -1185,6 +1185,15 @@ export default function KutaniWarePage() {
           <BackToContents />
         </section>
       </article>
+      <aside aria-label="Related craft guides" className="mt-16 border-t border-stone-200 pt-8">
+        <h2 className="text-xl font-semibold">Explore Other Ceramic Traditions</h2>
+        <div className="mt-4 flex flex-wrap gap-6">
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/arita-ware">Arita Ware →</a>
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/shigaraki-ware">Shigaraki Ware →</a>
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts">All crafts →</a>
+        </div>
+      </aside>
     </main>
   );
 }
+

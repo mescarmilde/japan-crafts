@@ -347,6 +347,15 @@ export default function AritaWarePage() {
           <p className="mt-8 text-sm leading-7 text-stone-600">Research reviewed September 2026. Visitor arrangements and product-care instructions should always be checked with the relevant institution or maker.</p>
         </Section>
       </article>
+      <aside aria-label="Related craft guides" className="mt-16 border-t border-stone-200 pt-8">
+        <h2 className="text-xl font-semibold">Explore Other Ceramic Traditions</h2>
+        <div className="mt-4 flex flex-wrap gap-6">
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/kutani-ware">Kutani Ware →</a>
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/shigaraki-ware">Shigaraki Ware →</a>
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts">All crafts →</a>
+        </div>
+      </aside>
     </main>
   );
 }
+
