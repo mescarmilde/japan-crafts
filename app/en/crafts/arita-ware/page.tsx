@@ -248,7 +248,7 @@ export default function AritaWarePage() {
           <p className="mt-5 leading-8 text-stone-700">The names overlap because making, shipping, and collecting porcelain produce different kinds of labels.</p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Production tradition</p><h3 className="text-xl font-semibold">Arita Ware</h3><p className="mt-4 leading-7 text-stone-700">A production tradition centered on Arita and its surroundings. It covers many forms and decorative approaches.</p></div>
-            <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Trade and historical name</p><h3 className="text-xl font-semibold">Imari Ware (伊万里焼)</h3><p className="mt-4 leading-7 text-stone-700">Historically, a wider trading name associated with the port of Imari. It included porcelain from Arita and other Hizen centers, such as Hasami and Mikawachi.</p></div>
+            <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Trade and historical name</p><h3 className="text-xl font-semibold">Imari Ware (伊万里焼)</h3><p className="mt-4 leading-7 text-stone-700">Historically, a wider trading name associated with the port of Imari. It included porcelain from Arita and other Hizen centers, such as <a href="/en/crafts/hasami-ware#hasami-and-arita" className={textLink}>Hasami</a> and Mikawachi.</p></div>
             <div className={card}><p className="mb-2 text-xs font-medium uppercase tracking-wider text-stone-500">Historical classification</p><h3 className="text-xl font-semibold">Ko-Imari (古伊万里)</h3><p className="mt-4 leading-7 text-stone-700">“Old Imari,” commonly used for Edo-period Hizen porcelain. Its boundaries vary with the museum or collecting context; it does not mean only gold-decorated export ware.</p></div>
           </div>
           <div className={prose}>
@@ -352,6 +352,7 @@ export default function AritaWarePage() {
         <div className="mt-4 flex flex-wrap gap-6">
           <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/kutani-ware">Kutani Ware →</a>
           <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/shigaraki-ware">Shigaraki Ware →</a>
+          <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/hasami-ware">Hasami Ware →</a>
           <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts">All crafts →</a>
         </div>
       </aside>
