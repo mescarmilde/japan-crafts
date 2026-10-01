@@ -61,6 +61,12 @@ export default function CraftsPage() {
           </p>
           <p className="mt-6 text-sm font-medium">Explore Shigaraki Ware →</p>
         </Link>
+        <Link href="/en/crafts/hasami-ware" className="rounded-lg border border-stone-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">
+          <p className="text-sm text-stone-500">Nagasaki Prefecture</p>
+          <h2 className="mt-2 text-2xl font-semibold">Hasami Ware</h2>
+          <p className="mt-4 leading-7 text-stone-600">Everyday tableware shaped by a network of specialists, changing markets, and contemporary design.</p>
+          <p className="mt-6 text-sm font-medium">Explore Hasami Ware →</p>
+        </Link>
       </section>
       <aside className="mt-12 border-t border-stone-200 pt-8">
         <h2 className="text-2xl font-semibold">Not sure where to start?</h2>

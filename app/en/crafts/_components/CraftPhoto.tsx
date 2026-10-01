@@ -10,12 +10,13 @@ type CraftPhotoProps = {
   sourceLabel: string;
   credit: string;
   license: string;
+  licenseUrl?: string;
   layout?: "card" | "wide";
   preload?: boolean;
 };
 
 export default function CraftPhoto({
-  src, width, height, alt, caption, source, sourceLabel, credit, license,
+  src, width, height, alt, caption, source, sourceLabel, credit, license, licenseUrl,
   layout = "card", preload = false,
 }: CraftPhotoProps) {
   return (
@@ -39,7 +40,7 @@ export default function CraftPhoto({
         >
           {sourceLabel}
         </a>{" "}
-        · {license}
+        · {licenseUrl ? <a href={licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{license}</a> : license}
       </figcaption>
     </figure>
   );
