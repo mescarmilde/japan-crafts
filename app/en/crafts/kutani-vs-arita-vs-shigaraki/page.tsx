@@ -1,11 +1,14 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import BackToContents from "../_components/BackToContents";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Kutani vs Arita vs Shigaraki: What’s the Difference? | Japan Crafts",
   description: "Compare Kutani, Arita, and Shigaraki Ware: their regions, materials, decoration, everyday use, and places to visit. Find a starting point for exploring Japanese ceramics.",
-};
+  path: "/en/crafts/kutani-vs-arita-vs-shigaraki",
+  article: true,
+});
 const link = "inline-block py-2 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]";
 const sections = [["at-a-glance", "At a Glance"], ["materials", "Materials and Making"], ["looking", "What to Look For"], ["choosing", "Choosing a First Piece"], ["visiting", "Choosing a Place to Visit"], ["faq", "FAQ"], ["sources", "Sources & Further Reading"]] as const;
 const crafts = [

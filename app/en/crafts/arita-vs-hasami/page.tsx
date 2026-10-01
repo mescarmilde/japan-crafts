@@ -1,12 +1,15 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import BackToContents from "../_components/BackToContents";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Arita vs Hasami Ware: Differences & How to Choose | Japan Crafts",
   description: "Understand the connections between Arita, Hasami, and Imari, compare materials and making, and choose ceramics or places to visit beyond regional stereotypes.",
-};
+  path: "/en/crafts/arita-vs-hasami",
+  article: true,
+});
 
 const link = "underline underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]";
 const sections = [

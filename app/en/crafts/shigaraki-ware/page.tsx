@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
@@ -7,10 +8,12 @@ import CraftPhoto from "../_components/CraftPhoto";
 import { shigarakiPhotos } from "./shigarakiPhotos";
 import VisitLinks from "../_components/VisitLinks";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Shigaraki Ware (信楽焼): Clay, History, Making & Travel Guide",
   description: "Discover Shigaraki Ware through its clay, kilns, tea vessels, tanuki figures, and changing industry, with places to visit and advice for choosing a piece.",
-};
+  path: "/en/crafts/shigaraki-ware",
+  article: true,
+});
 
 // Editorial basis: content/research/shigaraki.md. Image rights: shigaraki-images.md.
 const sections = [

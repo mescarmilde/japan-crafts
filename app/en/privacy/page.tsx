@@ -1,5 +1,10 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Privacy & Cookies | Japan Crafts", description: "How Japan Crafts uses optional analytics cookies." };
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy & Cookies | Japan Crafts", description: "How Japan Crafts uses optional analytics cookies.",
+  path: "/en/privacy",
+  article: false,
+});
 export default function PrivacyPage() {
   return <main className="mx-auto max-w-3xl px-6 py-12 sm:py-20">
     <h1 className="text-4xl font-semibold">Privacy &amp; Cookies</h1>

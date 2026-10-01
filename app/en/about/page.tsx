@@ -1,10 +1,13 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About Japan Crafts",
   description: "Learn about Japan Crafts, an English-language guide to the history, places, materials, and people behind Japanese crafts.",
-};
+  path: "/en/about",
+  article: false,
+});
 
 export default function AboutPage() {
   return (

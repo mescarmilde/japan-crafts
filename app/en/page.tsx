@@ -1,9 +1,12 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Japan Crafts | Stories Behind Japanese Craftsmanship",
   description: "Explore Japanese traditional crafts through their history, geography, materials, makers, and places of origin.",
-};
+  path: "/en",
+  article: false,
+});
 
 export default function EnglishHomePage() {
   return (

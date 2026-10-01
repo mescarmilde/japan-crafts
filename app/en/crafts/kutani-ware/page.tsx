@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/metadata";
 import CraftPhoto from "../_components/CraftPhoto";
 import VisitLinks from "../_components/VisitLinks";
 import BackToContents from "../_components/BackToContents";
@@ -6,11 +7,13 @@ import KutaniRegionMap from "./KutaniRegionMap";
 import Image from "next/image";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Kutani Ware (九谷焼): History, Styles, Making & Travel Guide",
   description:
     "Discover Kutani Ware (九谷焼), from its history and distinctive styles to how it is made, where to experience it in Ishikawa, and how to choose your first piece.",
-};
+  path: "/en/crafts/kutani-ware",
+  article: true,
+});
 const sections = [
   { id: "overview", label: "Overview" },
   { id: "history", label: "History" },

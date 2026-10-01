@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
@@ -7,11 +8,13 @@ import CraftPhoto from "../_components/CraftPhoto";
 import AritaProcess from "./AritaProcess";
 import { aritaPhotos } from "./aritaPhotos";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Arita Ware (有田焼): History, Styles, Making & Travel Guide",
   description:
     "Explore Arita Ware: the origins of Japanese porcelain, Arita and Imari, major styles, global trade, how it is made, places to visit, and what to buy.",
-};
+  path: "/en/crafts/arita-ware",
+  article: true,
+});
 
 // Editorial basis: content/research/arita.md. Source keys below retain its numbering.
 const sections = [

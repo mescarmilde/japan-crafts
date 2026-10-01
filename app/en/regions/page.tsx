@@ -1,10 +1,13 @@
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Craft Regions of Japan | Japan Crafts",
   description: "Explore Japanese crafts through the places that shaped them, starting with Kutani Ware in Ishikawa Prefecture.",
-};
+  path: "/en/regions",
+  article: false,
+});
 
 export default function RegionsPage() {
   return (
