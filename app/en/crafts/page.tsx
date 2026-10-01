@@ -71,6 +71,9 @@ export default function CraftsPage() {
       <aside className="mt-12 border-t border-stone-200 pt-8">
         <h2 className="text-2xl font-semibold">Not sure where to start?</h2>
         <Link href="/en/crafts/kutani-vs-arita-vs-shigaraki" className="mt-4 inline-block py-2 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Kutani vs Arita vs Shigaraki: compare the three traditions →</Link>
+        <div>
+          <Link href="/en/crafts/arita-vs-hasami" className="mt-4 inline-block py-2 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Arita vs Hasami Ware: differences, connections, and how to choose →</Link>
+        </div>
       </aside>
     </main>
   );

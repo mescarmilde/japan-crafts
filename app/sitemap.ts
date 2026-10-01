@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/en/crafts/arita-ware",
     "/en/crafts/shigaraki-ware",
     "/en/crafts/hasami-ware",
+    "/en/crafts/arita-vs-hasami",
     "/en/crafts/kutani-vs-arita-vs-shigaraki",
     "/en/regions",
     "/en/about",
