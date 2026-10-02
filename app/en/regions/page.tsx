@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = pageMetadata({
   title: "Craft Regions of Japan | Japan Crafts",
-  description: "Explore Japanese crafts through the places that shaped them, starting with Kutani Ware in Ishikawa Prefecture.",
+  description: "Explore Japanese crafts through the places that shaped them, including Kutani Ware and Yamanaka Lacquerware in Ishikawa Prefecture.",
   path: "/en/regions",
   article: false,
 });
@@ -25,7 +25,7 @@ export default function RegionsPage() {
         <p className="mt-5 max-w-2xl leading-8 text-stone-600">
           Begin with Kutani Ware: colorful porcelain connected to Kaga, Komatsu,
           and Nomi. Follow its history, discover its painting styles, and find
-          museums and workshops to explore.
+          museums and workshops to explore. Continue with Yamanaka Lacquerware to see how woodturning and lacquer connect with life in a hot-spring town.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           <Link href="/en/crafts/kutani-ware" className="rounded-lg border border-stone-200 p-6 transition hover:border-stone-400 hover:bg-stone-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-stone-700">
@@ -34,7 +34,13 @@ export default function RegionsPage() {
             <p className="mt-3 leading-7 text-stone-600">Bold colors, fine painting, and the stories behind a varied ceramic tradition.</p>
             <p className="mt-5 font-medium">Read the craft guide →</p>
           </Link>
-          <div className="rounded-lg bg-[#faf9f6] p-6">
+          <Link href="/en/crafts/yamanaka-lacquerware" className="rounded-lg border border-stone-200 p-6 transition hover:border-stone-400 hover:bg-stone-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-stone-700">
+            <p className="text-sm text-stone-500">Lacquerware · 山中漆器</p>
+            <h3 className="mt-2 text-2xl font-semibold">Yamanaka Lacquerware</h3>
+            <p className="mt-3 leading-7 text-stone-600">Woodturning, lacquer, and the specialists behind the vessels of Yamanaka Onsen.</p>
+            <p className="mt-5 font-medium">Read the craft guide →</p>
+          </Link>
+          <div className="rounded-lg bg-[#faf9f6] p-6 md:col-span-2">
             <h3 className="text-xl font-semibold">Find your bearings</h3>
             <p className="mt-3 leading-7 text-stone-600">See how the places in the Kutani story connect, then explore places to visit.</p>
             <div className="mt-4 flex flex-col items-start gap-2">

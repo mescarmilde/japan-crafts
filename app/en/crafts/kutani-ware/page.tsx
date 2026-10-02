@@ -1189,7 +1189,8 @@ export default function KutaniWarePage() {
         </section>
       </article>
       <aside aria-label="Related craft guides" className="mt-16 border-t border-stone-200 pt-8">
-        <h2 className="text-xl font-semibold">Explore Other Ceramic Traditions</h2><p className="mt-4 leading-7 text-stone-700">How do these traditions differ? <a href="/en/crafts/kutani-vs-arita-vs-shigaraki" className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Compare Kutani, Arita, and Shigaraki</a> through their materials, appearance, and places of origin.</p>
+        <h2 className="text-xl font-semibold">Explore Related Craft Traditions</h2><p className="mt-4 leading-7 text-stone-700">How do these traditions differ? <a href="/en/crafts/kutani-vs-arita-vs-shigaraki" className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Compare Kutani, Arita, and Shigaraki</a> through their materials, appearance, and places of origin.</p>
+        <p className="mt-4 leading-7 text-stone-700">Explore another side of the Kaga region with <a href="/en/crafts/yamanaka-lacquerware" className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]">Yamanaka Lacquerware</a>, where woodturning, lacquer, and the hot-spring town offer a different view of local craft.</p>
         <div className="mt-4 flex flex-wrap gap-6">
           <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/arita-ware">Arita Ware →</a>
           <a className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#355c49]" href="/en/crafts/shigaraki-ware">Shigaraki Ware →</a>
